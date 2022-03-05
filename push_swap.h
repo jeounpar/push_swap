@@ -6,18 +6,18 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 19:56:32 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/02/19 22:23:49 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/05 16:54:31 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-typedef struct s_node
+typedef struct s_arr
 {
-	int				data;
-	struct s_node	*next;
-	struct s_node	*prev;
-}	t_node;
+	int	*rst;
+	int	len;
+}	t_arr;
+
 
 #endif
