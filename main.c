@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 19:58:15 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/07 01:02:26 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/07 01:30:22 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ int	main(int argc, char *argv[])
 	}
 	else
 		solve(&a, &b, a.len);
+	system("leaks push_swap");
 	return (0);
 }
