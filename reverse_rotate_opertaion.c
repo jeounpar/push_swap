@@ -1,20 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   reverse_rotate_opertaion.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/19 20:04:52 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/07 00:57:46 by jeounpar         ###   ########.fr       */
+/*   Created: 2022/03/05 18:30:32 by jeounpar          #+#    #+#             */
+/*   Updated: 2022/03/07 01:09:55 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
+#include "push_swap.h"
 
-void	ft_errors(void)
+void	rr_a(t_arr *a)
 {
-	write(2, "Error\n", 6);
-	exit(1);
+	int	tmp;
+	int	i;
+
+	tmp = a->rst[0];
+	i = 1;
+	while (i < a->len)
+	{
+		a->rst[i - 1] = a->rst[i];
+		i += 1;
+	}
+	a->rst[a->len - 1] = tmp;
+}
+
+void	rr_b(t_arr *b)
+{
+	int	tmp;
+	int	i;
+
+	tmp = b->rst[0];
+	i = 1;
+	while (i < b->len)
+	{
+		b->rst[i - 1] = b->rst[i];
+		i += 1;
+	}
+	b->rst[b->len - 1] = tmp;
+}
+
+void	rr_rr(t_arr *a, t_arr *b)
+{
+	rr_a(a);
+	rr_b(b);
 }

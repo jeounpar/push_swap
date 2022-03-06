@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array_handler.c                                    :+:      :+:    :+:   */
+/*   array_validation.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 16:13:37 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/05 17:04:40 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/07 00:57:25 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	cnt_word(char *str, char set);
 
 int	count_int_nums(int argc, char *argv[])
 {
-	int i;
+	int	i;
 	int	result;
 
 	i = 1;
@@ -29,7 +29,6 @@ int	count_int_nums(int argc, char *argv[])
 	}
 	return (result);
 }
-
 
 int	check_duplicated(t_arr *arr)
 {
