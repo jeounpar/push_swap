@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:51:39 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/07 01:09:23 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/09 15:37:46 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	quick_sort(int *data, int start, int end)
 	int	j;
 	int	temp;
 
+	temp = 0;
 	if (start >= end)
 		return ;
 	pivot = start;
@@ -45,19 +46,6 @@ void	quick_sort(int *data, int start, int end)
 	}
 	quick_sort(data, start, j - 1);
 	quick_sort(data, j + 1, end);
-}
-
-static void	copy_arr(t_arr *src, t_arr *target)
-{
-	int	i;
-
-	i = 0;
-	target->len = src->len;
-	while (i < src->len)
-	{
-		target->rst[i] = src->rst[i];
-		i += 1;
-	}
 }
 
 int	set_pivot(t_arr *arr, int r)

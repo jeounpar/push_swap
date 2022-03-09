@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 16:24:15 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/07 01:03:20 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/09 15:22:32 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,6 @@ typedef struct s_arr
 	int	*rst;
 	int	len;
 }	t_arr;
-
-typedef struct s_ints
-{
-	int	samll_pivot;
-	int	large_pivot;
-}	t_ints;
 
 void	swap_a(t_arr *a);
 void	swap_b(t_arr *b);

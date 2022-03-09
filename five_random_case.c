@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:05:12 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/07 01:00:33 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/09 11:59:24 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 void	copy_arr(t_arr *src, t_arr *target);
 void	three_random_case(t_arr *arr);
 void	quick_sort(int *data, int start, int end);
-void	print_one(t_arr *a);
-void	print_two(t_arr *a, t_arr *b);
+void	r_a(t_arr *a, int *ra);
+void	r_b(t_arr *b, int *rb);
+void	p_a(t_arr *a, t_arr *b, int *pa);
+void	p_b(t_arr *a, t_arr *b, int *pa);
 
 void	push_min_max(t_arr *a, t_arr *b, int min, int max)
 {
@@ -47,19 +49,16 @@ static void	funcs(t_arr *a, t_arr *b, int trash, int max)
 {
 	if (b->rst[1] == max)
 	{
-		push_a(a, b, &trash);
-		rotate_a(a, &trash);
-		push_a(a, b, &trash);
+		p_a(a, b, &trash);
+		r_a(a, &trash);
+		p_a(a, b, &trash);
 	}
 	else
 	{
-		push_a(a, b, &trash);
-		push_a(a, b, &trash);
-		rotate_a(a, &trash);
+		p_a(a, b, &trash);
+		p_a(a, b, &trash);
+		r_a(a, &trash);
 	}
-	write (1, "pa\n", 3);
-	write (1, "pa\n", 3);
-	write (1, "ra\n", 3);
 }
 
 void	five_random_case(t_arr *a, t_arr *b)

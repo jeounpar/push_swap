@@ -6,12 +6,13 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 19:58:15 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/07 01:31:55 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/09 16:40:00 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 void	ft_errors(void);
 void	*ft_parse(int argc, char *argv[], t_arr *arr);
@@ -63,5 +64,6 @@ int	main(int argc, char *argv[])
 	}
 	else
 		solve(&a, &b, a.len);
+	free(a.rst);
 	return (0);
 }

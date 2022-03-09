@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 20:10:17 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/06 15:41:28 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/09 12:27:17 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	check_input(int argc, char *argv[])
 		while (argv[i][idx] != '\0')
 		{
 			if ((argv[i][idx] >= '0' && argv[i][idx] <= '9')
-				|| argv[i][idx] == ' ')
+				|| argv[i][idx] == ' ' || argv[i][idx] == '-')
 				;
 			else
 				ft_errors();

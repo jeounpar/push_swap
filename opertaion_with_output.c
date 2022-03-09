@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 00:46:39 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/07 01:02:47 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/09 12:01:00 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ void	p_a(t_arr *a, t_arr *b, int *pa)
 void	p_b(t_arr *a, t_arr *b, int *pa)
 {
 	push_b(a, b, pa);
-	write(1, "pa\n", 3);
+	write(1, "pb\n", 3);
 }
 
 void	r_a(t_arr *a, int *ra)
 {
 	rotate_a(a, ra);
-	write(1, "rb\n", 3);
+	write(1, "ra\n", 3);
 }
 
 void	r_b(t_arr *b, int *rb)

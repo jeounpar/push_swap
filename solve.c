@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 00:47:57 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/07 00:56:44 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/09 16:38:26 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,21 @@ void	rr_a_b(t_arr *a, t_arr *b, int r, int type)
 	idx = 0;
 	if (type == 0)
 	{
-		while (idx++ < r)
+		while (idx < r)
+		{
 			rr_a(a);
+			write (1, "rra\n", 4);
+			idx++;
+		}
 	}
 	else
 	{
-		while (idx++ < r)
+		while (idx < r)
+		{
 			rr_b(b);
+			write (1, "rrb\n", 4);
+			idx++;
+		}
 	}
 }
 
@@ -52,6 +60,8 @@ void	a_to_b(t_arr *a, t_arr *b, int r)
 		return ;
 	else if (r == 2)
 		return (two_random_case(a));
+	else if (a->len == 3)
+		return (three_random_case(a));
 	i = 0;
 	a_pivot = set_pivot(a, r);
 	ra = 0;
@@ -75,10 +85,7 @@ void	b_to_a(t_arr *a, t_arr *b, int r)
 	int	pa;
 
 	if (r == 1)
-	{
-		p_a(a, b, &pa);
-		return ;
-	}
+		return (p_a(a, b, &pa));
 	pa = 0;
 	rb = 0;
 	b_pivot = set_pivot(b, r);
@@ -100,18 +107,15 @@ void	solve(t_arr *a, t_arr *b, int r)
 	{
 		free(b->rst);
 		three_random_case(a);
-		free(a->rst);
 	}
 	else if (r == 5)
 	{
 		five_random_case(a, b);
-		free(a->rst);
 		free(b->rst);
 	}
 	else
 	{
 		a_to_b(a, b, r);
-		free(a->rst);
 		free(b->rst);
 	}
 }
