@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 00:41:22 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/09 15:55:44 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/09 21:51:55 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	three_random_case(t_arr *arr)
 	t_arr	tmp;
 
 	tmp.rst = (int *)malloc(arr->len * sizeof(int));
+	if (tmp.rst == NULL)
+		return ;
 	copy_arr(arr, &tmp);
 	if (case_one(&tmp, arr) == 1)
 		return (free(tmp.rst));

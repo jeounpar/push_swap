@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 00:47:57 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/09 16:38:26 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/09 22:19:09 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 void	b_to_a(t_arr *a, t_arr *b, int r);
 int		set_pivot(t_arr *arr, int r);
+int		is_already_sorted(t_arr *arr);
 void	three_random_case(t_arr *arr);
 void	five_random_case(t_arr *a, t_arr *b);
 void	two_random_case(t_arr *a);
@@ -56,14 +57,14 @@ void	a_to_b(t_arr *a, t_arr *b, int r)
 	int	pb;
 	int	ra;
 
-	if (r == 1)
+	if (is_already_sorted(a) == 1)
+		return ;
+	else if (r == 1)
 		return ;
 	else if (r == 2)
 		return (two_random_case(a));
-	else if (a->len == 3)
-		return (three_random_case(a));
-	i = 0;
 	a_pivot = set_pivot(a, r);
+	i = 0;
 	ra = 0;
 	pb = 0;
 	while (r-- > 0)
@@ -84,10 +85,10 @@ void	b_to_a(t_arr *a, t_arr *b, int r)
 	int	rb;
 	int	pa;
 
-	if (r == 1)
-		return (p_a(a, b, &pa));
 	pa = 0;
 	rb = 0;
+	if (r == 1)
+		return (p_a(a, b, &pa));
 	b_pivot = set_pivot(b, r);
 	while (r-- > 0)
 	{
