@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 00:41:22 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/09 21:51:55 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/11 00:14:32 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,5 @@ void	three_random_case(t_arr *arr)
 		return (free(tmp.rst));
 	else if (case_five(&tmp, arr) == 1)
 		return (free(tmp.rst));
+	free(tmp.rst);
 }
