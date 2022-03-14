@@ -6,13 +6,12 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 19:58:15 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/11 00:15:16 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/14 14:02:34 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 void	ft_errors(void);
 void	*ft_parse(int argc, char *argv[], t_arr *arr);
