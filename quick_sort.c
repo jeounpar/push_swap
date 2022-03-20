@@ -1,17 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   quick_sort.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 22:51:39 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/09 21:51:59 by jeounpar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 static void	swap_data(int *data, int temp, int pivot, int j)
 {
@@ -48,7 +37,7 @@ void	quick_sort(int *data, int start, int end)
 	quick_sort(data, j + 1, end);
 }
 
-int	set_pivot(t_arr *arr, int r)
+int	*set_pivot(t_arr *arr, int r)
 {
 	int	*tmp;
 	int	pivot;
@@ -64,7 +53,5 @@ int	set_pivot(t_arr *arr, int r)
 		i++;
 	}
 	quick_sort(tmp, 0, r - 1);
-	pivot = tmp[r / 2];
-	free(tmp);
-	return (pivot);
+	return (tmp);
 }

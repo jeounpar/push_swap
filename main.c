@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 19:58:15 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/14 14:02:34 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/20 18:13:01 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,13 @@ int	main(int argc, char *argv[])
 	if (is_already_sorted(&a) == 1 || b.rst == NULL)
 	{
 		free(a.rst);
+		if (b.rst != NULL)
+			free(b.rst);
 		return (0);
 	}
 	else
 		solve(&a, &b, a.len);
 	free(a.rst);
+	free(b.rst);
 	return (0);
 }

@@ -6,13 +6,13 @@
 #    By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/06 15:29:29 by jeounpar          #+#    #+#              #
-#    Updated: 2022/03/07 17:35:20 by jeounpar         ###   ########.fr        #
+#    Updated: 2022/03/20 18:33:17 by jeounpar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= push_swap
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= 
 SRCS		= errors.c \
 	free_alloc.c \
 	ft_atoi.c \

@@ -6,13 +6,13 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 18:08:12 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/06 23:57:18 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/20 18:21:49 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_a(t_arr *a, t_arr *b, int *pa)
+void	push_a(t_arr *a, t_arr *b)
 {
 	if (b->len == 0)
 		return ;
@@ -20,10 +20,9 @@ void	push_a(t_arr *a, t_arr *b, int *pa)
 	b->rst[b->len - 1] = 0;
 	a->len += 1;
 	b->len -= 1;
-	*pa += 1;
 }
 
-void	push_b(t_arr *a, t_arr *b, int *pb)
+void	push_b(t_arr *a, t_arr *b)
 {
 	if (a->len == 0)
 		return ;
@@ -31,5 +30,4 @@ void	push_b(t_arr *a, t_arr *b, int *pb)
 	a->rst[a->len - 1] = 0;
 	a->len -= 1;
 	b->len += 1;
-	*pb += 1;
 }

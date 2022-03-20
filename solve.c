@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/06 00:47:57 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/09 22:19:09 by jeounpar         ###   ########.fr       */
+/*   Created: 2022/03/20 18:34:42 by jeounpar          #+#    #+#             */
+/*   Updated: 2022/03/20 18:38:06 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,109 +14,111 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-void	b_to_a(t_arr *a, t_arr *b, int r);
-int		set_pivot(t_arr *arr, int r);
-int		is_already_sorted(t_arr *arr);
+int		*set_pivot(t_arr *arr, int r);
 void	three_random_case(t_arr *arr);
 void	five_random_case(t_arr *a, t_arr *b);
 void	two_random_case(t_arr *a);
-void	p_a(t_arr *a, t_arr *b, int *pa);
-void	p_b(t_arr *a, t_arr *b, int *pa);
-void	r_a(t_arr *a, int *ra);
-void	r_b(t_arr *b, int *rb);
+void	p_a(t_arr *a, t_arr *b);
+void	p_b(t_arr *a, t_arr *b);
+void	r_a(t_arr *a);
+void	r_b(t_arr *b);
 
-void	rr_a_b(t_arr *a, t_arr *b, int r, int type)
+static void	func_a_to_b(t_arr *a, t_arr *b, int *idx)
 {
+	p_b(a, b);
+	r_b(b);
+	*idx += 1;
+}
+
+void	a_to_b(t_arr *a, t_arr *b, int r, int magic)
+{
+	int	*sorted;
 	int	idx;
 
+	if (a->len == 0)
+		return ;
+	sorted = set_pivot(a, a->len);
 	idx = 0;
-	if (type == 0)
+	while (r-- > 0)
 	{
-		while (idx < r)
+		if (a->rst[a->len - 1] <= sorted[idx])
 		{
-			rr_a(a);
-			write (1, "rra\n", 4);
+			p_b(a, b);
 			idx++;
 		}
+		else if (a->rst[a->len - 1] > sorted[idx]
+			&& a->rst[a->len - 1] <= sorted[idx + magic])
+			func_a_to_b(a, b, &idx);
+		else
+			r_a(a);
+	}
+	free(sorted);
+	a_to_b(a, b, a->len, magic);
+}
+
+int	search_idx(t_arr *b, int n)
+{
+	int	i;
+
+	i = 0;
+	while (i < b->len)
+	{
+		if (b->rst[i] == n)
+			break ;
+		i++;
+	}
+	if ((i + 1) > b->len / 2)
+		return (1);
+	else
+		return (2);
+}
+
+void	b_to_a(t_arr *a, t_arr *b)
+{
+	int	*sorted;
+	int	tmp;
+
+	if (b->len == 0)
+		return ;
+	sorted = set_pivot(b, b->len);
+	tmp = search_idx(b, sorted[b->len - 1]);
+	if (tmp == 1)
+	{
+		while (b->rst[b->len - 1] != sorted[b->len - 1])
+			r_b(b);
 	}
 	else
 	{
-		while (idx < r)
+		while (b->rst[b->len - 1] != sorted[b->len - 1])
 		{
 			rr_b(b);
-			write (1, "rrb\n", 4);
-			idx++;
+			write(1, "rrb\n", 4);
 		}
 	}
-}
-
-void	a_to_b(t_arr *a, t_arr *b, int r)
-{
-	int	i;
-	int	a_pivot;
-	int	pb;
-	int	ra;
-
-	if (is_already_sorted(a) == 1)
-		return ;
-	else if (r == 1)
-		return ;
-	else if (r == 2)
-		return (two_random_case(a));
-	a_pivot = set_pivot(a, r);
-	i = 0;
-	ra = 0;
-	pb = 0;
-	while (r-- > 0)
-	{
-		if (a->rst[a->len - 1] > a_pivot)
-			r_a(a, &ra);
-		else
-			p_b(a, b, &pb);
-	}
-	rr_a_b(a, b, ra, 0);
-	a_to_b(a, b, ra);
-	b_to_a(a, b, pb);
-}
-
-void	b_to_a(t_arr *a, t_arr *b, int r)
-{
-	int	b_pivot;
-	int	rb;
-	int	pa;
-
-	pa = 0;
-	rb = 0;
-	if (r == 1)
-		return (p_a(a, b, &pa));
-	b_pivot = set_pivot(b, r);
-	while (r-- > 0)
-	{
-		if (b->rst[b->len - 1] < b_pivot)
-			r_b(b, &rb);
-		else
-			p_a(a, b, &pa);
-	}
-	rr_a_b(a, b, rb, 1);
-	a_to_b(a, b, pa);
-	b_to_a(a, b, rb);
+	p_a(a, b);
+	free(sorted);
+	b_to_a(a, b);
 }
 
 void	solve(t_arr *a, t_arr *b, int r)
 {
-	if (r == 3)
-	{
-		free(b->rst);
+	int	magic;
+
+	if (r == 2)
+		two_random_case(a);
+	else if (r == 3)
 		three_random_case(a);
-	}
 	else if (r == 5)
-	{
 		five_random_case(a, b);
-		free(b->rst);
-	}
 	else
 	{
-		a_to_b(a, b, r);
-		free(b->rst);
+		if (r == 100)
+			magic = 15;
+		else if (r == 500)
+			magic = 30;
+		else
+			magic = 20;
+		a_to_b(a, b, a->len, magic);
+		b_to_a(a, b);
 	}
 }

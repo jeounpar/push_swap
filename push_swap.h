@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 16:24:15 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/09 15:22:32 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/20 18:23:14 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ typedef struct s_arr
 void	swap_a(t_arr *a);
 void	swap_b(t_arr *b);
 void	swap_s(t_arr *a, t_arr *b);
-void	push_a(t_arr *a, t_arr *b, int *pa);
-void	push_b(t_arr *a, t_arr *b, int *pb);
+void	push_a(t_arr *a, t_arr *b);
+void	push_b(t_arr *a, t_arr *b);
 void	rr_a(t_arr *a);
 void	rr_b(t_arr *b);
 void	rr_rr(t_arr *a, t_arr *b);
-void	rotate_a(t_arr *a, int *ra);
-void	rotate_b(t_arr *b, int *rb);
+void	rotate_a(t_arr *a);
+void	rotate_b(t_arr *b);
 void	rotate_rr(t_arr *a, t_arr *b);
 
 #endif
