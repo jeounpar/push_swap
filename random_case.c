@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 00:41:22 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/11 00:14:32 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/20 18:46:03 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int		case_two(t_arr *a, t_arr *arr);
 int		case_three(t_arr *a, t_arr *arr);
 int		case_four(t_arr *a, t_arr *arr);
 int		case_five(t_arr *a, t_arr *arr);
-void	r_a(t_arr *a, int *ra);
 void	copy_arr(t_arr *src, t_arr *target);
 
 void	two_random_case(t_arr *a)

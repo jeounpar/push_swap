@@ -6,16 +6,14 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 19:58:15 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/20 18:13:01 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/20 18:43:46 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 
-void	ft_errors(void);
 void	*ft_parse(int argc, char *argv[], t_arr *arr);
-void	a_to_b(t_arr *a, t_arr *b, int r);
 void	solve(t_arr *a, t_arr *b, int r);
 
 int	is_already_sorted(t_arr *arr)

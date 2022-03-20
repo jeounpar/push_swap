@@ -6,13 +6,12 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 16:13:37 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/07 00:57:25 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/20 18:41:44 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_ok(char c, char set);
 int	cnt_word(char *str, char set);
 
 int	count_int_nums(int argc, char *argv[])
