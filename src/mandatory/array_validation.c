@@ -6,11 +6,11 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 16:13:37 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/20 18:41:44 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/20 22:13:11 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 int	cnt_word(char *str, char set);
 

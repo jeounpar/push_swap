@@ -6,11 +6,11 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 17:35:56 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/20 18:30:25 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/20 22:14:19 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 #include <unistd.h>
 
 int		is_already_sorted(t_arr *arr);

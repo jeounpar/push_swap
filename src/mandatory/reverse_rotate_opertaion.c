@@ -1,38 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   opertaion_with_output.c                            :+:      :+:    :+:   */
+/*   reverse_rotate_opertaion.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 00:46:39 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/20 18:22:26 by jeounpar         ###   ########.fr       */
+/*   Created: 2022/03/05 18:30:32 by jeounpar          #+#    #+#             */
+/*   Updated: 2022/03/20 22:14:19 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <unistd.h>
+#include "../../include/push_swap.h"
 
-void	p_a(t_arr *a, t_arr *b)
+void	rr_a(t_arr *a)
 {
-	push_a(a, b);
-	write(1, "pa\n", 3);
+	int	tmp;
+	int	i;
+
+	tmp = a->rst[0];
+	i = 1;
+	while (i < a->len)
+	{
+		a->rst[i - 1] = a->rst[i];
+		i += 1;
+	}
+	a->rst[a->len - 1] = tmp;
 }
 
-void	p_b(t_arr *a, t_arr *b)
+void	rr_b(t_arr *b)
 {
-	push_b(a, b);
-	write(1, "pb\n", 3);
+	int	tmp;
+	int	i;
+
+	tmp = b->rst[0];
+	i = 1;
+	while (i < b->len)
+	{
+		b->rst[i - 1] = b->rst[i];
+		i += 1;
+	}
+	b->rst[b->len - 1] = tmp;
 }
 
-void	r_a(t_arr *a)
+void	rr_rr(t_arr *a, t_arr *b)
 {
-	rotate_a(a);
-	write(1, "ra\n", 3);
-}
-
-void	r_b(t_arr *b)
-{
-	rotate_b(b);
-	write(1, "rb\n", 3);
+	rr_a(a);
+	rr_b(b);
 }

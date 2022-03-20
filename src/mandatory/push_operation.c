@@ -6,11 +6,11 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 18:08:12 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/20 18:21:49 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/20 22:14:19 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 void	push_a(t_arr *a, t_arr *b)
 {

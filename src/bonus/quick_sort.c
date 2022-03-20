@@ -6,11 +6,11 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 18:44:59 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/20 18:46:59 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/03/20 22:14:19 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 #include <stdlib.h>
 
 static void	swap_data(int *data, int temp, int pivot, int j)

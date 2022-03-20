@@ -1,49 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_opertaion.c                                 :+:      :+:    :+:   */
+/*   array_validation.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 18:11:29 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/03/20 18:22:51 by jeounpar         ###   ########.fr       */
+/*   Created: 2022/03/05 16:13:37 by jeounpar          #+#    #+#             */
+/*   Updated: 2022/03/20 22:14:19 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
-void	rotate_a(t_arr *a)
+int	cnt_word(char *str, char set);
+
+int	count_int_nums(int argc, char *argv[])
 {
-	int	tmp;
 	int	i;
+	int	result;
 
-	tmp = a->rst[a->len - 1];
-	i = a->len - 2;
-	while (i > -1)
+	i = 1;
+	result = 0;
+	while (i < argc)
 	{
-		a->rst[i + 1] = a->rst[i];
-		i -= 1;
+		result += cnt_word(argv[i], ' ');
+		i += 1;
 	}
-	a->rst[0] = tmp;
+	return (result);
 }
 
-void	rotate_b(t_arr *b)
+int	check_duplicated(t_arr *arr)
 {
-	int	tmp;
 	int	i;
+	int	j;
 
-	tmp = b->rst[b->len - 1];
-	i = b->len - 2;
-	while (i > -1)
+	i = 0;
+	while (i < arr->len - 1)
 	{
-		b->rst[i + 1] = b->rst[i];
-		i -= 1;
+		j = i + 1;
+		while (j < arr->len)
+		{
+			if (arr->rst[i] == arr->rst[j])
+				return (0);
+			j += 1;
+		}
+		i += 1;
 	}
-	b->rst[0] = tmp;
-}
-
-void	rotate_rr(t_arr *a, t_arr *b)
-{
-	rotate_a(a);
-	rotate_b(b);
+	return (1);
 }
